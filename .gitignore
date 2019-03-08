@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+<<<<<<< HEAD
+=======
+
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
+>>>>>>> Ready for deployment to heroku
