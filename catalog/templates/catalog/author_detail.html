@@ -9,7 +9,7 @@
 
                 <hr>
                 <p class="text-primary"><a href="{% url 'book-detail' book.id %}">{{ book.title }}</a></p>
-                <p class="text-muted">{{ book.summary }}</p>
+                <p class="text-muted">{{ book.summary|linebreaks }}</p>
 
     </div>
 {% endblock %}
