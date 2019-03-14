@@ -4,7 +4,10 @@
     <h1>Author List</h1>
     <ul>
         {% for author in author_list %}
-        <li><a href="{{ author.get_absolute_url }}">{{ author }}</a> ({{ author.date_of_birth}})
+        <li><a href="{{ author.get_absolute_url }}">{{ author }}</a>
+
+                ({{ author.date_of_birth|default_if_none:"暂时不知"}})
+
             {% if perms.catalog.can_mark_returned%}
                 - <a href="{% url 'author_update' author.id %}">更新作者</a>
                 - <a href="{% url 'author_delete' author.id %}">删除作者</a>
