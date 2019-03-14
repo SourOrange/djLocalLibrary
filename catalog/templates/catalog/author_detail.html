@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Author: {{ book.author }}</h1>
-    <p>{{ book.author.date_of_birth }} - {{ book.author.date_of_death }}</p>
+    <p>{{ book.author.date_of_birth|default_if_none:"Unknowen" }} - {{ book.author.date_of_death|default_if_none:"Unknowen" }}</p>
 
     <div style="margin-left:20px;margin-top:20px">
         <h4>Books:</h4>
