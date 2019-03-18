@@ -89,7 +89,7 @@ class AuthorListView(generic.ListView):
 
 
 class AuthorDetailView(generic.DetailView):
-    model = Book
+    model = Author
     template_name = 'catalog/author_detail.html'
 
     def get_context_data(self, **kwargs):

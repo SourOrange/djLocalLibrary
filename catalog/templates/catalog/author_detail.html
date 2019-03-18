@@ -1,15 +1,15 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>Author: {{ book.author }}</h1>
-    <p>{{ book.author.date_of_birth|default_if_none:"Unknowen" }} - {{ book.author.date_of_death|default_if_none:"Unknowen" }}</p>
+    <h1>Author: {{ author }}</h1>
+    <p>{{ author.date_of_birth|default_if_none:"Unknowen" }} - {{ author.date_of_death|default_if_none:"Unknowen" }}</p>
 
     <div style="margin-left:20px;margin-top:20px">
         <h4>Books:</h4>
-
+            {% for book in author.book_set.all%}
                 <hr>
-                <p class="text-primary"><a href="{% url 'book-detail' book.id %}">{{ book.title }}</a></p>
+                <p class="text-primary"><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></p>
                 <p class="text-muted">{{ book.summary|linebreaks }}</p>
-
+            {% endfor %}
     </div>
 {% endblock %}
